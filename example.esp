@@ -1,11 +1,76 @@
+# Espira Language Test File
+# This demonstrates all the fixes
+
+# Basic variable declarations
 let int x = 5
 let float y = 6.8
-echo Hello, x is {x} and y is {y}
-echo The result of 3 + 4 = {3 + 4}
-echo 1
+let string name = "S488U"
+let bool isStudent = true
 
-try {
-    let int result = 10 / 0
-} catch (error) {
-    echo "Division by zero encountered!"
-}
+# Echo with string interpolation
+echo "Hello, my name is {name}"
+echo "x = {x}, y = {y}"
+echo "Is student: {isStudent}"
+
+# Mathematical expressions with proper operator precedence
+let int result1 = 2 + 3 * 4
+echo "2 + 3 * 4 = {result1}"
+
+# This now correctly evaluates to 14, not 20!
+echo "Direct: 2 + 3 * 4 = {2 + 3 * 4}"
+
+# Parentheses support
+let int result2 = (2 + 3) * 4
+echo "(2 + 3) * 4 = {result2}"
+
+# Negative numbers
+let int negative = -10
+echo "Negative number: {negative}"
+echo "Calculation: {-5 + 3}"
+
+# Complex expressions
+let float complex = 10 / 2 + 3 * (4 - 1)
+echo "Complex: 10 / 2 + 3 * (4 - 1) = {complex}"
+
+# Variable references in expressions
+let int a = 10
+let int b = 5
+let int sum = a + b
+echo "a + b = {sum}"
+echo "Direct: {a + b}"
+echo "More complex: {a * 2 + b / 2}"
+
+# Multi-word strings now work!
+let string fullName = "John Doe Example"
+echo "Full name: {fullName}"
+
+# String with spaces (no more truncation)
+let string message = "This is a complete sentence with spaces"
+echo "{message}"
+
+# Comments are now supported
+// This is a comment
+# This is also a comment
+let int commented = 42  # inline comment support coming soon
+
+# Mixed expressions
+let int calc = 100 - 50 + 25
+echo "100 - 50 + 25 = {calc}"
+
+# Floating point calculations
+let float pi = 3.14159
+let float radius = 5.0
+let float area = pi * radius * radius
+echo "Circle area (r={radius}): {area}"
+
+# Boolean expressions
+let bool truthValue = true
+echo "Truth: {truthValue}"
+
+# Type enforcement examples
+let int integer = 42
+let float fromInt = integer
+echo "Int to float conversion: {fromInt}"
+
+# Final message
+echo "All tests completed successfully!"
